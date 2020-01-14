@@ -3,14 +3,14 @@ import axios from 'axios'
 import UserCard from './UserCard'
 
 let array = []
-console.log('asdasd', array)
+// let array2 = []
+// console.log('asdasd', array)
 
 class Followers extends React.Component {
     state = {
             followers: []
         };
       
-    
 
     // componentDidMount() {
     //     axios
@@ -24,32 +24,33 @@ class Followers extends React.Component {
     //         .catch(err => console.log(err));
     // }
 
-    componentDidMount(prevState) {
+    componentDidMount() {
         axios
             .get('https://api.github.com/users/dustinmyers/followers')
             .then(res => {
                 for (let i = 0; i < res.data.length; i++){
-                    array.push(res.data[i])
+                    array.push(res.data[i].login)
                 }
 
-               
-                // array.forEach((item) => {
-                //     axios.get(`https://api.github.com/users/${item}`)
-                //     .then(res => {
-                //         this.setState({
-                //             followers: [ res.data]
-                //         })
-                //     })
-                // })
-
-                 this.setState({
-                  followers: array
-                 });
-                console.log('fogggy', res);
+                array.forEach((item) => {
+                    axios.get(`https://api.github.com/users/${item}`)
+                    .then(res => {
+                        this.setState({
+                            followers: [...this.state.followers, res.data] 
+                           });
+                        
+                        console.log('monkey', res.data)
+                        // for (let i = 0; i < res.data.length; i++){
+                            
+                        // }
+                    })
+                })
+                
             })
             .catch(err => console.log(err));
     }
    
+
     render() {
         console.log("app is rendering");
         return (
@@ -57,7 +58,6 @@ class Followers extends React.Component {
                 {this.state.followers.map(follower => (
                     <UserCard user={follower} />
                 ))}
-
             </div>
         );
     }
