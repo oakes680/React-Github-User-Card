@@ -5,10 +5,10 @@ function UserCard(props) {
     console.log('yo', props.user)
  return (
     <>
-        <div>{props.user.name}</div>
+        <div className='name'>{props.user.name}</div>
         <img src={props.user.avatar_url} alt="avatar"/>
-        <div>{props.user.location}</div>        
-        <div>{props.user.bio}</div>       
+        <div className='location'>{props.user.location}</div>        
+        <div className='bio'>{props.user.bio}</div>       
                 
     </> 
     

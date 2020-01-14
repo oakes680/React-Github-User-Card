@@ -14,7 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get('https://api.github.com/users/dustinmyers')
+      .get('https://api.github.com/users/oakes680')
       .then(res => {
         this.setState({
           user: res.data

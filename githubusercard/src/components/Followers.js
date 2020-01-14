@@ -26,7 +26,7 @@ class Followers extends React.Component {
 
     componentDidMount() {
         axios
-            .get('https://api.github.com/users/dustinmyers/followers')
+            .get('https://api.github.com/users/oakes680/followers')
             .then(res => {
                 for (let i = 0; i < res.data.length; i++){
                     array.push(res.data[i].login)
