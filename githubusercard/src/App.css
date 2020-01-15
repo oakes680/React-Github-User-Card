@@ -1,0 +1,26 @@
+.App {
+  text-align: center;  
+  width: 70%;
+  margin: 0 auto;
+}
+
+img {
+  height: 400px;
+  width: 400px;
+}
+
+.name {
+  font-size: 48px;
+}
+
+.location {
+  font-size: 24px;
+}
+
+.bio {
+  font-size: 18px;
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
+  padding-bottom:30px;
+}
+
