@@ -64,3 +64,30 @@ class Followers extends React.Component {
 }
 
 export default Followers
+
+
+
+
+// componentDidMount() {
+//     axios
+//         .get('https://api.github.com/users/jlong5795/followers')
+//         .then(response => {
+//             console.log('Followers load', response.data);
+//             this.setState({
+//                 followers: response.data
+//             });
+//             this.state.followers.map(item => {
+//                 axios
+//                     .get(`https://api.github.com/users/${item.login}`)
+//                     .then(response => {
+//                         console.log('What Should be follower profiles', response)
+//                         this.setState({
+//                             followerProfiles: [...this.state.followerProfiles, response]
+//                         })
+//                     })
+//             })
+//         })
+//         .catch(error => {
+//             console.log('Error', error);
+//         });
+// }
